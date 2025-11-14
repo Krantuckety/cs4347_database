@@ -5,12 +5,20 @@ DROP TABLE IF EXISTS Product;
 -- Create table: Users
 CREATE TABLE Users 
 (
-    UserID INT PRIMARY KEY,
+    userID INT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     role VARCHAR(50) NOT NULL DEFAULT 'customer',
-    permissionLevel INT NOT NULL DEFAULT 0
+    CHECK 
+        (role IN ('customer', 'administrator')),
+    permissionLevel INT AS
+    (
+        CASE
+            WHEN role = 'administrator' THEN 1
+            ELSE 0
+        END
+    )   STORED
 );
 
 -- Create table: Product

@@ -1,0 +1,5 @@
+userID,username,email,password,role
+00000001,John Doe,johndoe@gmail.com,123wasd,customer
+00000002,Jane Duo,janeduo@gmail.com,234wasd,customer
+00000012,Henry Sikes,hsikes@yahoo.com,K@nUdoit?,customer
+12345678,Adminus Unus,adminguy@yahoo.com,123wasd,administrator
