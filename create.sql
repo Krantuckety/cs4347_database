@@ -5,6 +5,24 @@ DROP TABLE IF EXISTS OrderProduct;
 DROP TABLE IF EXISTS ShipmentProduct;
 DROP TABLE IF EXISTS InventoryOrder;
 DROP TABLE IF EXISTS ProductInventory;
+-- Create table: Supplier
+CREATE TABLE Supplier
+(
+    supplierID INT PRIMARY KEY,
+    SupplierName VARCHAR(255),
+    Address VARCHAR(255),
+    ContactInfo VARCHAR(255)
+);
+
+-- Create table: Inventory
+CREATE TABLE Inventory
+(
+    inventoryID INT PRIMARY KEY,
+    ProductID INT,
+    Quantity INT DEFAULT 0,
+    Location VARCHAR(255),
+    LastUpdated DATE
+);
 
 -- Create table: Users
 CREATE TABLE Users 
@@ -22,6 +40,27 @@ CREATE TABLE Users
             ELSE 0
         END
     ) STORED
+);
+
+-- Create table: Orders
+CREATE TABLE Orders
+(
+    orderID INT PRIMARY KEY,
+    userID INT NOT NULL,
+    orderDate DATE,
+    deliveryDate DATE,
+    status VARCHAR(50),
+    FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE CASCADE
+);
+
+-- Create table: Shipments
+CREATE TABLE Shipments
+(
+    shipmentID INT PRIMARY KEY,
+    supplierID INT NOT NULL,
+    shipmentDate DATE,
+    status VARCHAR(255),
+    FOREIGN KEY (supplierID) REFERENCES Supplier(supplierID) ON DELETE CASCADE
 );
 
 -- Create table: Product
