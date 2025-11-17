@@ -1,0 +1,4 @@
+shipmentID,supplierID,destination,datePurchased,status
+50000001,20000001,Dallas Warehouse A,2025-01-09,In Transit
+50000002,20000002,Houston Storage B,2025-01-11,Delivered
+50000003,20000003,Austin Tech Hub,2025-01-13,Processing

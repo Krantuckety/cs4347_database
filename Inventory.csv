@@ -1,0 +1,4 @@
+productID,inventoryID,quantity,location,lastUpdated
+10000012,30000001,42,Dallas Warehouse A,2025-10-15
+10000167,30000002,15,Houston Storage B,2025-09-10
+10000012,30000003,8,Austin Tech Hub,2025-10-18
