@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS inventoryManager;
+USE inventoryManager;
+
 -- Drop statements to delete tables if already created
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS RolePermission;
@@ -16,15 +19,13 @@ CREATE TABLE Users
     username VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role VARCHAR(50) NOT NULL DEFAULT 'customer',
+    role VARCHAR(50) NOT NULL DEFAULT 'customer'
 );
 
 CREATE TABLE RolePermission
 (
     role VARCHAR(50) PRIMARY KEY,
-    CHECK (role IN ('customer', 'administrator')),
-    permissionLevel INT AS
-    (
+    permissionLevel INT GENERATED ALWAYS AS (
         CASE
             WHEN role = 'administrator' THEN 1
             ELSE 0
@@ -57,7 +58,7 @@ CREATE TABLE Inventory
     inventoryID INT NOT NULL,
     quantity INT NOT NULL DEFAULT 0,
     location VARCHAR(255) NOT NULL,
-    lastUpdated DATE NOT NULL DEFAULT '2000-01-01'
+    lastUpdated DATE NOT NULL DEFAULT '2000-01-01',
     PRIMARY KEY (productID, inventoryID),
     FOREIGN KEY (productID) REFERENCES Product(productID) ON DELETE CASCADE
 );
