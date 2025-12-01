@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Inventory</title>
+
+    <!-- didn't bother with styling yet, maybe later -->
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 85%; /* kinda eyeballed */
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 6px 10px;
+        }
+        th {
+            background: #eee;
+        }
+        .nav-btns {
+            margin-bottom: 12px;
+        }
+        .nav-btns button {
+            padding: 8px 12px;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Warehouse Inventory Stock</h1>
+
+    <div class="nav-btns">
+        
+        <button onclick="window.location.href='index.html'">Return to Home</button>
+        <button onclick="window.location.href='orderform.html'">Go to Order Form</button>
+    </div>
+
+    <hr>
+
+    <h2>Current Stock Levels</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Inventory ID</th>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Location</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- placeholder -->
+            <tr>
+                <td colspan="5" style="text-align:center; font-style:italic;">
+                    (Inventory will show here once connected.)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

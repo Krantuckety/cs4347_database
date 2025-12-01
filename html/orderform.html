@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 85%; 
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 6px 10px;
+        }
+        th {
+            background: #eee;
+        }
+        .nav-btns {
+            margin-bottom: 12px;
+        }
+        .nav-btns button,
+        .add-row-btn,
+        .submit-btn {
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-right: 6px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById("orderTable");
+            const newRow = table.insertRow(-1);
+
+            // Product ID cell
+            const productCell = newRow.insertCell(0);
+            productCell.innerHTML = `<input type="text" name="productId[]" required>`;
+
+            // Quantity cell
+            const qtyCell = newRow.insertCell(1);
+            qtyCell.innerHTML = `<input type="number" name="quantity[]" min="1" required>`;
+
+            // Location cell
+            const locCell = newRow.insertCell(2);
+            locCell.innerHTML = `<input type="text" name="location[]" required>`;
+        }
+
+        
+    </script>
+</head>
+<body>
+
+    <h1>Order Form</h1>
+
+    <div class="nav-btns">
+        <button onclick="window.location.href='index.html'">Return to Home</button>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h3>Add items Below</h3>
+      <form action="Checkout.html" method="GET">
+
+        <table id="orderTable">
+            <tr>
+                <th>Product ID</th>
+                <th>Quantity</th>
+                <th>Location</th>
+            </tr>
+
+            <!-- Default first row -->
+            <tr>
+                <td><input type="text" name="productId[]" required></td>
+                <td><input type="number" name="quantity[]" min="1" required></td>
+                <td><input type="text" name="location[]" required></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <button type="button" class="add-row-btn" onclick="addRow()">Add Another Product</button>
+        <button type="submit" class="submit-btn">Submit Order</button>
+
+      </form>
+    </div>
+
+</body>
+</html>

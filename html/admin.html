@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+<!-- This file will have a check added-on later to ensure username is an admin -->
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            width: 85%; 
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 6px 10px;
+        }
+        th {
+            background: #eee;
+        }
+        .nav-btns {
+            margin-bottom: 12px;
+        }
+        .nav-btns button,
+        .submit-btn {
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-right: 6px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Admin Page</h1>
+
+    <div class="nav-btns">
+        
+        <button onclick="window.location.href='index.html'">Return to Home</button>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h3>Change Current Inventory</h3>
+      <form action="admin_Change.php" method="GET">
+
+        <table id="orderTable">
+            <tr>
+                <th>Product Name</th>
+                <th>Product Code</th>
+                <th>Quantity</th>
+            </tr>
+
+            <tr>
+            <td style="color: gray;">Example Product (Placeholder)</td>
+            <td>
+                <input type="password" name="product_code_example" required>
+            </td>
+                
+            <td>
+                <input type="number" name="quantity_example" required>
+            </td>
+            </tr>
+
+            <tr>
+                <td colspan="5" style="text-align:center; font-style:italic;">
+                    (Inventory will show here once connected.)
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <button type="submit" class="submit-btn">Submit Change</button>
+
+      </form>
+    </div>
+
+    
+
+</body>
+</html>
