@@ -1,6 +1,9 @@
 CREATE DATABASE IF NOT EXISTS inventoryManager;
 USE inventoryManager;
 
+-- Ignore Foreign Key relationships
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- Drop statements to delete tables if already created
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS RolePermission;
@@ -11,6 +14,9 @@ DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS OrderContents;
 DROP TABLE IF EXISTS Shipments;
 DROP TABLE IF EXISTS ShipmentContents;
+
+-- Set to acknowledge Foreign Key relationships
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- Create table: Users
 CREATE TABLE Users 
