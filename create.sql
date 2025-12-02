@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS inventoryManager;
-USE inventoryManager;
+CREATE DATABASE IF NOT EXISTS cs4347_database;
+USE cs4347_database;
 
 -- Ignore Foreign Key relationships
 SET FOREIGN_KEY_CHECKS = 0;

@@ -1,0 +1,1 @@
+$mysqli = new mysqli("localhost", "root", "", "4347InventoryDB");

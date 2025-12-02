@@ -1,6 +1,6 @@
-USE inventoryManager;
+USE cs4347_database;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Users.csv'
+LOAD DATA LOCAL INFILE 'data/Users.csv'
 INTO TABLE Users
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -10,43 +10,43 @@ INSERT INTO RolePermission (role) VALUES
 ('customer'),
 ('administrator');
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Product.csv'
+LOAD DATA LOCAL INFILE 'data/Product.csv'
 INTO TABLE Product
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Supplier.csv'
+LOAD DATA LOCAL INFILE 'data/Supplier.csv'
 INTO TABLE Supplier
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Inventory.csv'
+LOAD DATA LOCAL INFILE 'data/Inventory.csv'
 INTO TABLE Inventory
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Orders.csv'
+LOAD DATA LOCAL INFILE 'data/Orders.csv'
 INTO TABLE Orders
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/OrderContents.csv'
+LOAD DATA LOCAL INFILE 'data/OrderContents.csv'
 INTO TABLE OrderContents
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Shipments.csv'
+LOAD DATA LOCAL INFILE 'data/Shipments.csv'
 INTO TABLE Shipments
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/ShipmentContents.csv'
+LOAD DATA LOCAL INFILE 'data/ShipmentContents.csv'
 INTO TABLE ShipmentContents
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
