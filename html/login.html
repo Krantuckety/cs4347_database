@@ -6,7 +6,7 @@
     <title>Login</title> 
 
         <style>
-    body {
+      body {
                 margin: 0;
                 font-family: Arial, sans-serif;
                 background-color: #f5f5f5;
@@ -31,6 +31,25 @@
                 align-items: center;
                 gap: 20px;
             }
+
+      .login-info-box {
+        position: absolute;
+        left: 8%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 260px;
+        padding: 20px;
+        background: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      }
+
+      .login-info-box h3 {
+        margin-top: 0;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -40,7 +59,17 @@
     <header>
     4347 Inventory Manager
     </header>
+
+    <!-- Sample Login box -->
+    <div class="login-info-box">
+      <h3>Sample Logins</h3>
+      <p><strong>Standard User:</strong><br>
+         Username: <code>johndoe</code><br>
+         Password: <code>123wasd</code>
+      </p>
+    </div>
     
+    <!-- Username & Password input boxes -->
     <div class="container">
     <h2>Login</h2>
 
