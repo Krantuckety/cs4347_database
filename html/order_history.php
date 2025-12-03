@@ -34,11 +34,19 @@ if ($isAdmin) {
             o.userID,
             o.orderDate,
             o.deliveryDate,
-            o.status
+            o.status,
+            COALESCE(SUM(oc.quantity * p.unitPrice), 0) AS totalValue
         FROM Orders o
-        GROUP BY o.orderID
+        LEFT JOIN OrderContents oc ON o.orderID = oc.orderID
+        LEFT JOIN Product p ON oc.productID = p.productID
+        GROUP BY 
+            o.orderID,
+            o.userID,
+            o.orderDate,
+            o.deliveryDate,
+            o.status
         ORDER BY o.orderDate DESC
-    ";
+        ";
 
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -47,27 +55,31 @@ if ($isAdmin) {
 } else {
     // Normal user sees ONLY their own orders
     $sql = "
-        SELECT 
-    o.orderID,
-    o.userID,
-    o.orderDate,
-    o.deliveryDate,
-    o.status,
-    COALESCE(SUM(oc.quantity * p.unitPrice), 0) AS totalValue
-FROM Orders o
-LEFT JOIN OrderContents oc ON o.orderID = oc.orderID
-LEFT JOIN Product p ON oc.productID = p.productID
-WHERE o.userID = ?
-GROUP BY o.orderID
-ORDER BY o.orderDate DESC
-
+    SELECT 
+        o.orderID,
+        o.userID,
+        o.orderDate,
+        o.deliveryDate,
+        o.status,
+        COALESCE(SUM(oc.quantity * p.unitPrice), 0) AS totalValue
+    FROM Orders o
+    LEFT JOIN OrderContents oc ON o.orderID = oc.orderID
+    LEFT JOIN Product p ON oc.productID = p.productID
+    WHERE o.userID = ?
+    GROUP BY 
+        o.orderID,
+        o.userID,
+        o.orderDate,
+        o.deliveryDate,
+        o.status
+    ORDER BY o.orderDate DESC
     ";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-}
+    }
 
 // SHOW SQL ERRORS IF ANY
 if (!$result) {
