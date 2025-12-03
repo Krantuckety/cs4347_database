@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/config.php";
+require_once "../../includes/config.php";
 
 $sql = "
     SELECT 
@@ -9,7 +9,7 @@ $sql = "
         Inventory.location,
         Inventory.lastUpdated
     FROM Inventory
-    ORDER BY Inventory.inventoryID DESC, Inventory.productID DESC
+    ORDER BY Inventory.inventoryID ASC, Inventory.productID DESC
 ";
 
 $result = $mysqli->query($sql);
