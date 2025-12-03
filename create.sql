@@ -58,6 +58,7 @@ CREATE TABLE Supplier
     ContactInfo VARCHAR(255) NOT NULL
 );
 
+-- Create table: Inventory
 CREATE TABLE Inventory
 (
     productID INT NOT NULL,
