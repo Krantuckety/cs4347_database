@@ -10,7 +10,7 @@ if (!isset($_SESSION['userID'])) {
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "cs4347_database";
+$db   = "inventoryManager";
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {

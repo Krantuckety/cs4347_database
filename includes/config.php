@@ -1,1 +1,1 @@
-$mysqli = new mysqli("localhost", "root", "", "4347InventoryDB");
+$mysqli = new mysqli("localhost", "root", "", "inventoryManager");
