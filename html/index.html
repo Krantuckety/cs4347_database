@@ -32,6 +32,19 @@
             gap: 20px;
         }
 
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background-color: #c82333;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
         a.nav-btn {
             display: inline-block;
             padding: 12px 25px;
@@ -55,6 +68,9 @@
 
 <header>
     Inventory Manager
+    <button class="logout-btn" onclick="window.location.href='login.html'">
+        Return to Login
+    </button>
 </header>
 
 <div class="container">
