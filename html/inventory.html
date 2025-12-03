@@ -29,6 +29,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <h1>Warehouse Inventory Stock</h1>
@@ -42,6 +43,14 @@
     <hr>
 
     <h2>Current Stock Levels</h2>
+
+    <div style="text-align:right; margin-bottom:10px;">
+        <button 
+            onclick="window.location.href='process_shipments.php'"
+            style="background:#28a745; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-size:16px;">
+            Load Incoming Shipments
+        </button>
+    </div>
 
     <iframe 
     src="inventory.php" 
